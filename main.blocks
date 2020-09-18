@@ -119,4 +119,4 @@ dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-`</field></shadow></value></block></statement></block></xml>
+`</field></shadow></value></block></statement></block><block type="device_while" id="4}P[RfeZpBgS?W|LxaqW" disabled="true" x="70" y="230"><value name="COND"><shadow type="logic_boolean" id="+DglQG=|!nB.3s^.]4sf" disabled="true"><field name="BOOL">FALSE</field></shadow></value></block></xml>
