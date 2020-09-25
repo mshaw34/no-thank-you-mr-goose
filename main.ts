@@ -11,7 +11,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         `, mySprite, 0, -100)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprite.destroy()
+    Goose.destroy()
 })
 let Goose: Sprite = null
 let player_projectile: Sprite = null
