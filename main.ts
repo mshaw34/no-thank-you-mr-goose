@@ -1,4 +1,4 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . b b b b b b b b . 
         b 1 1 1 b b 1 1 1 b 
@@ -160,7 +160,7 @@ mySprite = sprites.create(img`
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 mySprite.setPosition(76, 110)
 info.setLife(3)
-controller.moveSprite(mySprite, 210, 0)
+controller.moveSprite(mySprite, 170, 0)
 game.onUpdate(function () {
     scene.setBackgroundImage(img`
         7777777777777ffffffffffffffffffffffffffffffffffffff7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
