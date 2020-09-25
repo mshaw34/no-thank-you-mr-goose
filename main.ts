@@ -9,14 +9,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         c b b b d d b b b c 
         . c c c c c c c c . 
         `, mySprite, 0, -100)
-    pause(500)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    if (player_projectile.overlapsWith(Goose)) {
-        Goose.destroy()
-    } else {
-    	
-    }
+    otherSprite.destroy()
 })
 let Goose: Sprite = null
 let player_projectile: Sprite = null
@@ -168,7 +163,7 @@ controller.moveSprite(mySprite, 170, 0)
 game.onUpdate(function () {
 	
 })
-game.onUpdateInterval(2800, function () {
+game.onUpdateInterval(1000, function () {
     Goose = sprites.create(img`
         ..........1111111.....................
         .........1fffffff1....................
@@ -203,5 +198,6 @@ game.onUpdateInterval(2800, function () {
         .......1fffff11ffffff1................
         .......111111111111111................
         `, SpriteKind.Enemy)
-    Goose.setPosition(randint(15, 140), 30)
+    Goose.setVelocity(0, 100)
+    Goose.setPosition(randint(15, 140), 2)
 })
