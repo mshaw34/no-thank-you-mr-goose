@@ -138,7 +138,6 @@ scene.setBackgroundImage(img`
     77777777777777777777777777777ffffffffffffffffffffffffffffffffffffffff7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     77777777777777777777777777777ffffffffffffffffffffffffffffffffffffffff7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
-game.showLongText("\"Run! You are late for class!\"", DialogLayout.Bottom)
 mySprite = sprites.create(img`
     . . . . f f f f . . . . . 
     . . f f c c c c f f . . . 
