@@ -166,7 +166,19 @@ game.onUpdate(function () {
 	
 })
 forever(function () {
-    pause(500)
+    if (player_projectile.overlapsWith(Goose)) {
+        Goose.destroy()
+    }
+    projectile = sprites.createProjectileFromSprite(img`
+        . . 1 1 d d . . 
+        . 1 1 1 1 1 d . 
+        1 1 d d d d 1 1 
+        d 1 d 1 1 1 1 1 
+        d d d 1 1 1 d 1 
+        1 d d 1 1 d d 1 
+        . 1 d d d d 1 . 
+        . . 1 d 1 d . . 
+        `, Goose, 0, 100)
 })
 game.onUpdateInterval(2800, function () {
     Goose = sprites.create(img`
@@ -204,14 +216,4 @@ game.onUpdateInterval(2800, function () {
         .......111111111111111................
         `, SpriteKind.Enemy)
     Goose.setPosition(randint(15, 140), 30)
-    projectile = sprites.createProjectileFromSprite(img`
-        . . 1 1 d d . . 
-        . 1 1 1 1 1 d . 
-        1 1 d d d d 1 1 
-        d 1 d 1 1 1 1 1 
-        d d d 1 1 1 d 1 
-        1 d d 1 1 d d 1 
-        . 1 d d d d 1 . 
-        . . 1 d 1 d . . 
-        `, Goose, 0, 100)
 })
