@@ -205,7 +205,12 @@ game.onUpdateInterval(1000, function () {
     Goose.setPosition(randint(15, 140), 2)
 })
 forever(function () {
-    for (let index = 0; index <= 2; index++) {
+    if (Goose.isHittingTile(CollisionDirection.Right)) {
+        info.changeLifeBy(-1)
+    }
+})
+forever(function () {
+    for (let index = 0; index <= 3; index++) {
         info.startCountdown(15.1)
         pause(15000)
         scene.setBackgroundImage([img`
@@ -574,5 +579,4 @@ forever(function () {
             `][index])
     }
     game.over(true)
-    game.reset()
 })
