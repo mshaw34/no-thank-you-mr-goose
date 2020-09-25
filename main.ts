@@ -166,9 +166,6 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 mySprite.setPosition(76, 110)
 info.setLife(3)
 controller.moveSprite(mySprite, 170, 0)
-game.onUpdate(function () {
-	
-})
 game.onUpdateInterval(1000, function () {
     Goose = sprites.create(img`
         ..........1111111.....................
