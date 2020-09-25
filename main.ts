@@ -11,7 +11,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         `, mySprite, 0, -100)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
+    sprite.destroy()
 })
 let Goose: Sprite = null
 let player_projectile: Sprite = null
@@ -203,7 +203,7 @@ game.onUpdateInterval(1000, function () {
 })
 forever(function () {
     for (let index = 0; index <= 2; index++) {
-        info.startCountdown(15)
+        info.startCountdown(15.1)
         pause(15000)
         scene.setBackgroundImage([img`
             7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
