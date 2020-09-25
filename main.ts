@@ -486,3 +486,57 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
+let mySprite = sprites.create(img`
+    . . . . f f f f . . . . . 
+    . . f f c c c c f f . . . 
+    . f f c c c c c c f f . . 
+    f f c c c c c c c c f f . 
+    f f c c f c c c c c c f . 
+    f f f f f c c c f c c f . 
+    f f f f c c c f c c f f . 
+    f f f f f f f f f f f f . 
+    f f f f f f f f f f f f . 
+    . f f f f f f f f f f . . 
+    . f f f f f f f f f f . . 
+    f e f f f f f f f f e f . 
+    e 4 f 7 7 7 7 7 7 c 4 e . 
+    e e f 6 6 6 6 6 6 f e e . 
+    . . . f f f f f f . . . . 
+    . . . f f . . f f . . . . 
+    `, SpriteKind.Player)
+mySprite.setPosition(0, 110)
+controller.moveSprite(mySprite, 100, 0)
+let Goose = sprites.create(img`
+    ..........1111111.....................
+    .........1fffffff1....................
+    .........1fff222ff1...................
+    .........1fffff222f111.........111....
+    .........1ff1ffff2ffff1.......1fff1...
+    .........1ff11ffffffff1......1ffdff1..
+    .........1fff111ffff11.......1fffdf1..
+    ..........11ffff1111..........11fdf1..
+    ............1ffff..............fddff1.
+    .............1fff1............1fdddf1.
+    .............1ffff............1fdddf1.
+    .............1ffff1...........1fdfdf1.
+    ............11ffff1...........1fdfdf1.
+    ...111111111eeefff1.11111111111fdfdf1.
+    .11fffeeeeeeeeefddf1fffffffffffffddf1.
+    1ffffffeeeeeeeeedddfdddffdddddffddff1.
+    fffffffeeeeeeeedddddddddddddddddddff1.
+    111fffeeeeeeeeedddddddddddffffddddff1.
+    ...1ffeeeeeeeedddddddddddfdddffdddf1..
+    ...11eeeeeeeeeddddddddddddddddddddf1..
+    ....11eeeeeeedddddddfffdddddddddddf1..
+    ....11eeeeeddddddddd11fffffffffffff1..
+    .....11eeedddddddd11..1111111111111...
+    .......1eeddddddd11...................
+    ........1f11111ff1....................
+    .......1ff1...1ff1....................
+    .......1ff1...1ff1....................
+    .......1ff1...1ff1....................
+    .......1ff1...1ff1....................
+    .......1ff111.1ff11111................
+    .......1fffff11ffffff1................
+    .......111111111111111................
+    `, SpriteKind.Enemy)
