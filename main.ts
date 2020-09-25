@@ -1,8 +1,22 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . b b b b b b b b . 
+        b 1 1 1 b b 1 1 1 b 
+        b 1 1 1 d d 1 1 1 b 
+        c 1 1 1 d d 1 1 1 b 
+        c 1 1 1 d d 1 1 1 b 
+        c 1 1 1 d d 1 1 1 c 
+        c b b b d d b b b c 
+        . c c c c c c c c . 
+        `, mySprite, 0, -100)
+    pause(500)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
 })
 let Goose: Sprite = null
 let projectile: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -125,7 +139,7 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . f f f f . . . . . 
     . . f f c c c c f f . . . 
     . f f c c c c c c f f . . 
@@ -147,19 +161,6 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 mySprite.setPosition(76, 110)
 info.setLife(3)
 controller.moveSprite(mySprite, 210, 0)
-forever(function () {
-    pause(1000)
-    projectile = sprites.createProjectileFromSprite(img`
-        . b b b b b b b b . 
-        b 1 1 1 b b 1 1 1 b 
-        b 1 1 1 d d 1 1 1 b 
-        c 1 1 1 d d 1 1 1 b 
-        c 1 1 1 d d 1 1 1 b 
-        c 1 1 1 d d 1 1 1 c 
-        c b b b d d b b b c 
-        . c c c c c c c c . 
-        `, mySprite, 0, -100)
-})
 game.onUpdateInterval(2800, function () {
     Goose = sprites.create(img`
         ..........1111111.....................
