@@ -1,8 +1,8 @@
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    Goose.destroy()
+    otherSprite.destroy()
 })
-let projectile: Sprite = null
 let Goose: Sprite = null
+let projectile: Sprite = null
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -147,7 +147,20 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 mySprite.setPosition(76, 110)
 info.setLife(3)
 controller.moveSprite(mySprite, 210, 0)
-game.onUpdateInterval(2000, function () {
+forever(function () {
+    pause(1000)
+    projectile = sprites.createProjectileFromSprite(img`
+        . b b b b b b b b . 
+        b 1 1 1 b b 1 1 1 b 
+        b 1 1 1 d d 1 1 1 b 
+        c 1 1 1 d d 1 1 1 b 
+        c 1 1 1 d d 1 1 1 b 
+        c 1 1 1 d d 1 1 1 c 
+        c b b b d d b b b c 
+        . c c c c c c c c . 
+        `, mySprite, 0, -100)
+})
+game.onUpdateInterval(2800, function () {
     Goose = sprites.create(img`
         ..........1111111.....................
         .........1fffffff1....................
@@ -182,18 +195,5 @@ game.onUpdateInterval(2000, function () {
         .......1fffff11ffffff1................
         .......111111111111111................
         `, SpriteKind.Enemy)
-    Goose.setPosition(randint(20, 130), 30)
-})
-forever(function () {
-    pause(1000)
-    projectile = sprites.createProjectileFromSprite(img`
-        . b b b b b b b b . 
-        b 1 1 1 b b 1 1 1 b 
-        b 1 1 1 d d 1 1 1 b 
-        c 1 1 1 d d 1 1 1 b 
-        c 1 1 1 d d 1 1 1 b 
-        c 1 1 1 d d 1 1 1 c 
-        c b b b d d b b b c 
-        . c c c c c c c c . 
-        `, mySprite, 0, -100)
+    Goose.setPosition(randint(15, 140), 30)
 })
